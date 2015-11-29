@@ -2,7 +2,7 @@ module.expots = function(io) {
 	var sockets = io.sockets;
 	var crypto = require("crypto");
 	var onlines = {};
-	console.log("*****\nto aqui\n*******");
+
 	sockets.on("connection",function(client) {
 		var session = client.handshake.session;
 		var usuario = session.usuario;
