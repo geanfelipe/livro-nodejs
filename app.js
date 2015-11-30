@@ -46,9 +46,9 @@ io.use(function(socket, next) {
 				socket.handshake.session = session;
 				return next();
 			}
-		})
-	})
-})
+		});
+	});
+});
 
 load('models')
 .then('controllers')
@@ -59,7 +59,7 @@ app.use(error.notFound);
 app.use(error.serverError);
 
 load('sockets')
-	.into(io);
+.into(io);
 
 server.listen(8080, function(){
     console.log("Ntalk no ar.");
