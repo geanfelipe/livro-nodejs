@@ -58,12 +58,6 @@ load('models')
 app.use(error.notFound);
 app.use(error.serverError);
 
-io.sockets.on("connection",function(client) {
-	var crypto = require("crypto");
-	var session = client.handshake.session;
-	var usuario = session.usuario;
-});
-
 load('sockets')
 	.into(io);
 

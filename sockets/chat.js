@@ -2,11 +2,11 @@ module.expots = function(io) {
 	var sockets = io.sockets;
 	var crypto = require("crypto");
 	var onlines = {};
+	var crypto = require("crypto");
+	var session = client.handshake.session;
+	var usuario = session.usuario;
 
 	sockets.on("connection",function(client) {
-		var session = client.handshake.session;
-		var usuario = session.usuario;
-
 		onlines[usuario.email] = usuario.email;
 
 		for(var email in onlines) {
@@ -33,8 +33,6 @@ module.expots = function(io) {
 			session.sala = sala;
 			client.join(sala);
 		});
-
-		
 
 		client.on("disconnect",function() {
 			var sala = session.sala;
