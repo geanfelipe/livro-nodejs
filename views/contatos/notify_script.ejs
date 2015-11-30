@@ -15,6 +15,8 @@ socket.on("notify-offline",function(email) {
 	notify({email:email, msg:'Offline'});
 });
 socket.on("new-message",function(data) {
+	console.log("NEW MESSAGE",data);
+
 	notify({email:data.email, msg:'Mensagem'});
 	var id = 'chat_'+data.email;
 	var chat = document.getElementById(id);

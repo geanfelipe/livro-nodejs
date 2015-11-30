@@ -4,7 +4,9 @@
 <script type="text/javascript">
 	var socket = io("http://localhost:8080");
 	socket.emit("join","<%- sala %>");
-	socket.on("send-client",function(msg){document.getElementById("chat").innerHTML += msg;
+
+	socket.on("send-client",function(msg) {
+		document.getElementById("chat").innerHTML += msg;
 	});
 	var enviar = function() {
 		var msg = document.getElementById("msg").value;
